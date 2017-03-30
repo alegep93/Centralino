@@ -13,9 +13,13 @@ public class Main {
 		
 		Date startDate = new Date();
 		
+		int counter = 1;
+		
 		for (Cliente c : cArray){
-			contrOper.serviClienti(c);
-			System.out.println("Cliente " + c.nome + " passato all'operatore");
+			if (counter > 5) counter = 1;
+			contrOper.serviClienti(c,counter);
+			System.out.println(c.nome + " passato all'operatore " + counter + "\r\n ------------------------------------------------------------");
+			counter++;
 		}
 		
 		Date endDate = new Date();
