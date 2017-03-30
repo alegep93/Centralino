@@ -2,15 +2,23 @@ package com.centralino;
 
 public class Operatore implements Runnable {
 	private Cliente cServito;
-	private Main m;
+	private ControlloreOperatori contrOper;
 	
-	public Operatore(Cliente cServito, Main m){
+	public Operatore(Cliente cServito, ControlloreOperatori co){
 		this.cServito = cServito;
-		this.m = m;
+		this.contrOper = co;
 	}
 	
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub	
+		try{
+			System.out.println("Sto servendo: " + cServito.nome);
+			Thread.sleep(1000);
+			System.out.println("Ho servito: " + cServito.nome);
+			System.out.println("---------------------------------");
+			contrOper.DecrementaOpOccupati();
+		}catch(InterruptedException e){
+			e.printStackTrace();
+		}
 	}
 }
