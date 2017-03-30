@@ -18,7 +18,7 @@ public class Main {
 		for (Cliente c : cArray){
 			if (counter > 5) counter = 1;
 			contrOper.serviClienti(c,counter);
-			System.out.println(c.nome + " passato all'operatore " + counter + "\r\n ------------------------------------------------------------");
+			System.out.println(c.nome + " passato all'operatore " + counter + "\r\n --------------------------------------------");
 			counter++;
 		}
 		
