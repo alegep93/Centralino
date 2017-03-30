@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Main {	
 	public static void main(String[] args) throws InterruptedException {
-		Cliente[] cArray = new Cliente[100];
+		Cliente[] cArray = new Cliente[10];
 		ControlloreOperatori contrOper = new ControlloreOperatori();
 		
 		for(int i=0; i<cArray.length; i++) {
@@ -23,6 +23,7 @@ public class Main {
 		}
 		
 		Date endDate = new Date();
-		System.out.println((endDate.getTime() - startDate.getTime()) + "ms");
+		System.out.println("Tempo totale delle chiamate effettuate: " + (endDate.getTime() - startDate.getTime()) + "ms");
+		System.out.println("Ogni operatore ha lavorato mediamente per: " + (endDate.getTime() - startDate.getTime())/5 + "ms");
 	}
 }
